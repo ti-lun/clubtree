@@ -5,8 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+require('./models/Clubs');
+require('./models/Members');
+require('./models/Hierarchy');
+require('./models/Tasks');
+
+
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+
+mongoose.connect('mongodb://localhost/news');
 
 var app = express();
 
