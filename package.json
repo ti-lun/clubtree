@@ -1,0 +1,24 @@
+{
+  "name": "clubhouse",
+  "version": "1.0.0",
+  "description": "PROBABLY GONNA RENAME THIS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ti-lun/clubhouse.git"
+  },
+  "keywords": [
+    "startup.",
+    "eh"
+  ],
+  "author": "John Tyler Janecek, Katie Bui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ti-lun/clubhouse/issues"
+  },
+  "homepage": "https://github.com/ti-lun/clubhouse#readme"
+}
