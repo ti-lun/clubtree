@@ -7,19 +7,27 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="shortcut icon" href="/images/site-logo/favicon.ico" >
-
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
   </head>
   <body>
-    <body ng-app="ClubTree" ng-controller="FrontPage">
-      <div>
+    <body ng-app="ClubTree">
+      <script type="text/ng-template" id="/home.html">
+            <div class="row top-banner">
+              <div class="col-md-6 top-banner-each"><img class="img-responsive" src="/images/site-logo/entirelogo.png" width="90%"></div>
+              <div class="col-md-6 top-banner-each"><button class="btn-teal">Log In</button> <button class="btn-red">Join us</button></div>
+            </div>
+            <div class="front-splash">
+              <h1 class="front-splash-font">{{ welcome }}</h1>
+              <input type="text" class="search" placeholder="Got a name?"></input>
+          </div>
+      </script>
+
+      <script type="text/ng-template" id="/login.html">
         <div class="row top-banner">
           <div class="col-md-6 top-banner-each"><img class="img-responsive" src="/images/site-logo/entirelogo.png" width="90%"></div>
           <div class="col-md-6 top-banner-each"><button class="btn-teal">Log In</button> <button class="btn-red">Join us</button></div>
         </div>
-      </div>
-      <div class="front-splash">
-        <h1 class="front-splash-font">Find your Clubtree.</h1>
-        <input type="text" class="search" placeholder="Got a name?"></input>
-      </div>
+      </script>
+
   </body>
 </html>

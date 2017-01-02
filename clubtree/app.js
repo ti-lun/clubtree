@@ -12,7 +12,7 @@ require('./models/Hierarchy');
 require('./models/Tasks');
 
 
-var index = require('./routes/index');
+var routes = require('./routes/index');
 var users = require('./routes/users');
 
 
@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
