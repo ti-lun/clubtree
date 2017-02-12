@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,20 @@
     "startup.",
     "eh"
   ],
-  "author": "John Tyler Janecek, Katie Bui",
+  "author": "David Dinh, Christian Phan, Sam Chakrabarty, Robert Wong, Katie Bui",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ti-lun/clubhouse/issues"
   },
-  "homepage": "https://github.com/ti-lun/clubhouse#readme"
+  "homepage": "https://github.com/ti-lun/clubhouse#readme",
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "mongoose": "^4.7.5",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+    }
 }
