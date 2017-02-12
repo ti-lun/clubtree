@@ -1,6 +1,6 @@
-var app = angular.module('ClubTree', ['ui.router']);
-
-app.config([
+// var app = angular.module('ClubTree', ['ui.router']);
+var app = angular.module('ClubTree', ['ui.router'])
+.config([
   '$stateProvider',
   '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
@@ -10,12 +10,16 @@ app.config([
         url: '/home',
         templateUrl: '/home.html',
         controller: 'FrontPage'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: '/login.html',
+        controller: 'FrontPage'
       });
 
       $urlRouterProvider.otherwise('home');
-}]);
-
-app.controller('FrontPage', [
+}])
+.controller('FrontPage', [
   '$scope',
   function($scope) {
     $scope.welcome = 'Find your Clubtree.';

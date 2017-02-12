@@ -2,9 +2,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+hr.style1 {
+	border-top: 1px solid #8c8b8b;
+}
+
 .top-banner {
   background-color: #f7f6f6;
   height: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.top-banner-login {
+  height: 10%;
   padding-left: 20%;
   padding-right: 20%;
 }
@@ -61,6 +71,11 @@ body {
   padding: 15px;
   box-shadow: 0px;
   width: 35%;
+}
+
+.login {
+  text-align: center;
+  padding-top: 5%;
 }
 
 input:focus, button:focus {

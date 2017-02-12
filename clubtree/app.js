@@ -16,7 +16,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect('mongodb://localhost/clubtree');
 
 var app = express();
 

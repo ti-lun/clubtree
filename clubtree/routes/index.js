@@ -1,16 +1,18 @@
 var express = require('express');
 var router = express.Router();
+
+
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.render('index', { title: 'Express' });
+});
+
 var mongoose = require('mongoose');
 
 var Member = mongoose.model('Member');
 var Hierarchy = mongoose.model('Hierarchy');
 var Club = mongoose.model('Club');
 var Task = mongoose.model('Task');
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
 router.get('/clubs', function(req, res, next) {
   Club.find(function(err, clubs) {
