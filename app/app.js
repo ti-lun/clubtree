@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/Clubs');
 require('./models/Members');
-require('./models/Hierarchy');
+// require('./models/Hierarchy');
 require('./models/Tasks');
 
 
@@ -16,7 +16,45 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 
+
+console.log("before any of that shiet, let's try adding some content to the mongo db");
+
+
 mongoose.connect('mongodb://localhost/clubtree');
+
+var MongoClient = require('mongodb').MongoClient,
+  test = require('assert');
+
+MongoClient.connect('mongodb://localhost:27017', function(err, db) {
+  var collection = db.collection("ehhhhhhhhhh");
+  // Insert a single document
+  collection.insertOne({saveMe:' it work'});
+
+ 
+ 
+
+  console.log("\nSAVE ME\n");
+  if (err) throw err;
+
+  console.log("My new Hierarchy is saved",
+    "`save` hook worked as espected since we had no errors here");
+  
+
+  // console.log(collection.findOne({SWEET:'IT WORKS'}));
+
+
+  //THIS DOESN'T NECESSARILY WORKS
+  // Wait for a second before finishing up, to ensure we have written the item to disk
+  // setTimeout(function() {
+
+    // Fetch the document
+    collection.findOne({hello:'world_no_safe'}, function(err, item) {
+      test.equal(null, err);
+      test.equal('world_no_safe', item.hello);
+      db.close();
+    })
+  }, 100); 
+
 
 var app = express();
 console.log("1");
