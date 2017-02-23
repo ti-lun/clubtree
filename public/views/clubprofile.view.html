@@ -1,39 +1,18 @@
-<!DOCTYPE xhtml>
-
-<html lang="en">
-
-<head>
-    <title>Clubtree</title>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>-->
-    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>-->
-    <!--<script src="/javascripts/angularApp.js"></script>-->
-    <!--<script src="/services/clubprofile.service.js"></script>-->
-    <!--<script src="/controllers/clubprofile.controller.js"></script>-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="shortcut icon" href="/images/site-logo/favicon.ico">
-</head>
-
-<body ng-app="ClubTree" class="container">
-    <div ng-controller="ClubProfile">
-        <div class="col-xs-4">
-            <img class="clubprofilelogo" src="/images/clubprofile/starcraft-logo.png">
-        </div>
-        <div class="col-xs-8 clubprofileheader">club name goes here</div>
-        <div class="col-xs-12 clubprofilesection">
-            <h1>In a nutshell</h1>
-            <hr />
-        </div>
-        <div class="col-xs-12 clubprofilesection">
-            <h1>Basic info</h1>
-            <hr />
-        </div>
-        <div class="col-xs-12 clubprofilesection">
-            <h1>Teamwork values</h1>
-            <hr />
-        </div>
+<div>
+    <div class="col-xs-4">
+        <img class="clubprofilelogo" src="/images/clubprofile/starcraft-logo.png">
     </div>
-</body>
-
-</html>
+    <div class="col-xs-8 clubprofileheader">{{ viewingClubProfile.name }}</div>
+    <div class="col-xs-12 clubprofilesection">
+        <h1>In a nutshell</h1>
+        <hr />
+    </div>
+    <div class="col-xs-12 clubprofilesection">
+        <h1>Basic info</h1>
+        <hr />
+    </div>
+    <div class="col-xs-12 clubprofilesection">
+        <h1>Teamwork values</h1>
+        <hr />
+    </div>
+</div>
