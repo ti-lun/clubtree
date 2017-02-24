@@ -1,3 +1,7 @@
+hr { 
+    border-style: solid;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -80,4 +84,19 @@ hr.style1 {
 
 input:focus, button:focus {
   outline: none;
+}
+
+.clubprofilelogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:128px;
+}
+.clubprofileheader {
+  margin-bottom: 30pt;
+}
+.clubprofilesection {
+  font-weight: bold;
+  color: #00bcd4;
+  margin-bottom: 30pt;
 }
