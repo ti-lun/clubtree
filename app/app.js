@@ -17,45 +17,25 @@ var users = require('./routes/users');
 
 
 
-console.log("before any of that shiet, let's try adding some content to the mongo db");
+console.log("before any of that, let's try adding some content to the mongo db");
+
+
+//Custom module which will help take care of what collection we insert it from
+//
+var addDocToCollect =require("./addDocToCollect");
+var currentCollection = "testing";
+var doc = {"This should work": "oh yeah, it definitely works"};
+var doc2 = {"Call on meeeeeeeeeee": "Caallll on me"};
+
+addDocToCollect(currentCollection, doc);
+addDocToCollect(currentCollection, doc2);
+
+
+
+
 
 
 mongoose.connect('mongodb://localhost/clubtree');
-
-var MongoClient = require('mongodb').MongoClient,
-  test = require('assert');
-
-MongoClient.connect('mongodb://localhost:27017', function(err, db) {
-  var collection = db.collection("ehhhhhhhhhh");
-  // Insert a single document
-  collection.insertOne({saveMe:' it work'});
-
- 
- 
-
-  console.log("\nSAVE ME\n");
-  if (err) throw err;
-
-  console.log("My new Hierarchy is saved",
-    "`save` hook worked as espected since we had no errors here");
-  
-
-  // console.log(collection.findOne({SWEET:'IT WORKS'}));
-
-
-  //THIS DOESN'T NECESSARILY WORKS
-  // Wait for a second before finishing up, to ensure we have written the item to disk
-  // setTimeout(function() {
-
-    // Fetch the document
-    collection.findOne({hello:'world_no_safe'}, function(err, item) {
-      test.equal(null, err);
-      test.equal('world_no_safe', item.hello);
-      db.close();
-    })
-  }, 100); 
-
-
 var app = express();
 console.log("1");
 // view engine setup
