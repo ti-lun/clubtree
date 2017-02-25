@@ -1,30 +1,31 @@
 'use strict';
 
-angular.module('backendService', [])
-    .factory('ClubProfile', function ($http) {
+angular.module('ClubTree').service('ClubAPI', function ($http) {
+    this.get = function () {
+        console.log('you are in service club get');
         return {
-            get: function () {
-                return Promise.resolve({
-                    name: 'UCI Starcraft',
-                    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida sodales luctus.',
-                    survey: {
-                        dateFounded: 2016,
-                        numberOfMembers: 10,
-                        meetingLocation: 'No where in particular',
-                        meetingTime: 'No time in particular'
-                    },
-                    members: [],
-                    organizers: [],
-                    tags: ['relaxed', 'fun', 'low commitment'],
-                    category: ''
-                })
-                // return $http.get('/api/clubprofile');
+            name: 'UCI StarCraft',
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida sodales luctus.',
+            survey: {
+                dateFounded: 2016,
+                numberOfMembers: 10,
+                meetingLocation: 'No where in particular',
+                meetingTime: 'No time in particular'
             },
-            create: function (body) {
-                return $http.post('/api/clubprofile', body);
+            personality: {
+                values: ''
             },
-            delete: function (id) {
-                return $http.delete('/api/clubprofile/' + id);
-            }
-        }
-    });
+            members: [],
+            organizers: [],
+            tags: ['relaxed', 'fun', 'low commitment'],
+            category: ''
+        };
+        // return $http.get('/api/clubprofile');
+    };
+    this.create = function (body) {
+        return $http.post('/api/clubprofile', body);
+    };
+    this.delete = function (id) {
+        return $http.delete('/api/clubprofile/' + id);
+    };
+});
