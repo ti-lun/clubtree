@@ -1,18 +1,31 @@
 <div>
-    <div class="col-xs-4">
-        <img class="clubprofilelogo" src="/images/clubprofile/starcraft-logo.png">
-    </div>
-    <div class="col-xs-8 clubprofileheader">{{ viewingClubProfile.name }}</div>
+
     <div class="col-xs-12 clubprofilesection">
-        <h1>In a nutshell</h1>
-        <hr />
+        <div class="col-xs-4 clubprofileheader"> 
+            <div class="clubprofilelogo"> <img class="img-fluid" style="max-width: 100%; height: auto" src="/images/clubprofile/starcraft-logo.png"> </div>
+        </div>
+        <div class="col-xs-8 clubprofileheader"> {{ viewingClubProfile.name }} </div>
     </div>
+
     <div class="col-xs-12 clubprofilesection">
-        <h1>Basic info</h1>
-        <hr />
+        <h1 class="col-xs-12 clubprofilesection"> In a nutshell </h1>
+        <hr class="col-xs-12 clubprofilesection" />
+        <p class="col-xs-12 clubprofilesection"> {{ viewingClubProfile.summary }} </p>
     </div>
+
     <div class="col-xs-12 clubprofilesection">
-        <h1>Teamwork values</h1>
-        <hr />
+        <h1 class="col-xs-12 clubprofilesection"> Basic info </h1>
+        <hr class="col-xs-12 clubprofilesection" />
+        <p class="col-xs-12 clubprofilesection"> Year started: {{ viewingClubProfile.survey.dateFounded }} </p>
+        <p class="col-xs-12 clubprofilesection"> Approx. number of members: {{ viewingClubProfile.survey.numberOfMembers }} </p>
+        <p class="col-xs-12 clubprofilesection"> Meeting location: {{ viewingClubProfile.survey.meetingLocation }} </p>
+        <p class="col-xs-12 clubprofilesection"> Meeting times: {{ viewingClubProfile.survey.meetingTime }} </p>
     </div>
+
+    <div class="col-xs-12 clubprofilesection">
+        <h1 class="col-xs-12 clubprofilesection"> Teamwork values </h1>
+        <hr class="col-xs-12 clubprofilesection question" />
+        <p class="col-xs-12 clubprofilesection"> {{ viewingClubProfile.survey.values }} </p>
+    </div>
+
 </div>
