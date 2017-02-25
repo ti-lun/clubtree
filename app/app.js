@@ -21,21 +21,17 @@ console.log("before any of that, let's try adding some content to the mongo db")
 
 
 //Custom module which will help take care of what collection we insert it from
-//
+//Example demo below
 var addDocToCollect =require("./addDocToCollect");
 var currentCollection = "testing";
-var doc = {"This should work": "oh yeah, it definitely works"};
-var doc2 = {"Call on meeeeeeeeeee": "Caallll on me"};
-
+var doc = {"Hwat": "oh yeah, it definitely works"};
+var doc2 = {"Oh no": "Caallll on me"};
 addDocToCollect(currentCollection, doc);
 addDocToCollect(currentCollection, doc2);
 
 
-
-
-
-
 mongoose.connect('mongodb://localhost/clubtree');
+
 var app = express();
 console.log("1");
 // view engine setup

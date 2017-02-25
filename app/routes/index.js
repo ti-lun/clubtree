@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 var mongoose = require('mongoose');
 
 var Member = mongoose.model('Member');
-var Hierarchy = mongoose.model('Hierarchy');
+// var Hierarchy = mongoose.model('Hierarchy');
 var Club = mongoose.model('Club');
 var Task = mongoose.model('Task');
 

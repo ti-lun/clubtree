@@ -21,10 +21,11 @@ var addDocToCollect = function(collection_name, docs)
 	      console.log(error);
 	      collection.insert(docs, function(){
 	        console.log("Successful insertion of ", docs );
+	        db.close();
 	      });
 
 	    });	  
-	  	db.close();
+	  	
 	});
 }
 module.exports = addDocToCollect;

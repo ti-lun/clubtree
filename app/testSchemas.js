@@ -48,8 +48,9 @@ var john = new Member(
 	email: "not4You@what.com",
 	clubs: [{}]
 	});
+
 	console.log (john);
   console.log("yo what up? Adding John in.");
   john.save();
-  
+
 
