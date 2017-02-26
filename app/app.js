@@ -23,16 +23,16 @@ console.log("before any of that, let's try adding some content to the mongo db")
 
 
 //Custom module which will help take care of what collection we insert it from
-//Example demo below
-// var addDocToCollect =require("./addDocToCollect");
-// var currentCollection = "testing";
-// var doc = {"Hwat": "oh yeah, it definitely works"};
-// var doc2 = {"Oh no": "Caallll on me"};
-// addDocToCollect(currentCollection, doc);
-// addDocToCollect(currentCollection, doc2);
+// Example demo below
+var addDocToCollect =require("./addDocToCollect");
+var currentCollection = "testing";
+var doc = {"Hwat": "oh yeah, it definitely works"};
+var doc2 = {"Oh no": "Caallll on me"};
+addDocToCollect(currentCollection, doc);
+addDocToCollect(currentCollection, doc2);
 
 
-mongoose.connect('mongodb://localhost/clubtree');
+//wait guys, we opened mongoose.connect twice. I think I might have done that.
 
 var app = express();
 // view engine setup
@@ -72,10 +72,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var port = process.env.PORT || 3000;
-
-
-app.listen(port);
-
+//Problem after i deleted this part, it will hang when calling npm start
 
 module.exports = app;
