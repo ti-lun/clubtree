@@ -81,3 +81,34 @@ hr.style1 {
 input:focus, button:focus {
   outline: none;
 }
+
+div.clubprofileheader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.clubprofilelogo {
+  max-width: 128px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.clubprofilesection {
+  margin-bottom: 30pt;
+}
+
+h1.clubprofilesection {
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+hr.clubprofilesection { 
+  border-style: solid;
+}
+
+p.clubprofilesection {
+  color: #000000;
+  margin: 0 0 0 0;
+  font-weight: normal;
+}

@@ -7,4 +7,8 @@ var MemberSchema = new mongoose.Schema({
   clubs: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Club'}]
 });
 
-mongoose.model('Member', MemberSchema);
+Member = mongoose.model('Member', MemberSchema); //name of collection is member
+
+module.exports.Member = Member;
+module.exports.Schema = MemberSchema; 
+
