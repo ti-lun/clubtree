@@ -1,0 +1,57 @@
+.side {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.floatIt {
+    z-index: 9999;
+    position: absolute;
+    left: 7%;
+
+}
+
+#login-image {
+    text-align: center;
+    background-image: url("../images/login-bg.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 105%;
+    -webkit-transition: all 0.5s;
+    /*display: block;*/
+    /*position: fixed;*/
+    /*left: 0;
+    right: 0;
+    z-index: 1;*/
+    -webkit-filter: brightness(40%) grayscale(1);
+}
+
+
+
+#login-image:hover, #signup-image:hover {
+    -webkit-filter: none;
+}
+
+
+.menuText {
+    color: white;
+    font-size: 60px;
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#signup-image {
+    text-align: center;
+    background-image: url("../images/signup-bg.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 102%;
+
+    -webkit-transition: all 0.5s;
+    -webkit-filter: brightness(40%) grayscale(1);
+}

@@ -1,25 +1,23 @@
-var express = require('express');
+ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// require Mongoose schemas
 var mongoose = require('mongoose');
 require('./models/Clubs');
 require('./models/Members');
-require('./models/Hierarchy');
-require('./models/Tasks');
+require('./models/Trees');
+// require('./models/Tasks');
 
+mongoose.connect('mongodb://localhost/clubtree');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-
-mongoose.connect('mongodb://localhost/clubtree');
-
 var app = express();
-console.log("1");
 // view engine setup
 app.set('views', path.join(__dirname, '../public/views'));
 app.set('view engine', 'ejs');
@@ -31,9 +29,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-
-console.log("2");
-
 
 app.use('/', routes);
 app.use('/users', users);
@@ -60,6 +55,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-console.log("MADE IT DOWN HERE");
+var port = process.env.PORT || 3000;
+
+
+app.listen(port);
+
 
 module.exports = app;

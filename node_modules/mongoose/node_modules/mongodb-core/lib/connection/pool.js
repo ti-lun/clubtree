@@ -853,6 +853,9 @@ Pool.prototype.destroy = function(force) {
 
       destroy(self, connections);
     } else {
+      // Ensure we empty the queue
+      _execute(self)();
+      // Set timeout
       setTimeout(checkStatus, 1);
     }
   }
@@ -992,6 +995,9 @@ function removeConnection(self, connection) {
 var handlers = ["close", "message", "error", "timeout", "parseError", "connect"];
 
 function _createConnection(self) {
+  if(self.state == DESTROYED || self.state == DESTROYING) {
+    return;
+  }
   var connection = new Connection(messageHandler(self), self.options);
 
   // Push the connection
@@ -1100,6 +1106,13 @@ function _execute(self) {
 
     // Block on any auth in process
     waitForAuth(function() {
+      // New pool connections are in progress, wait them to finish
+      // before executing any more operation to ensure distribution of
+      // operations
+      if(self.connectingConnections.length > 0) {
+        return;
+      }
+
       // As long as we have available connections
       while(true) {
         // Total availble connections
@@ -1120,7 +1133,24 @@ function _execute(self) {
         }
 
         // Get a connection
-        var connection = self.availableConnections[self.connectionIndex++ % self.availableConnections.length];
+        var connection = null;
+
+        // Locate all connections that have no work
+        var connections = [];
+        // Get a list of all connections
+        for(var i = 0; i < self.availableConnections.length; i++) {
+          if(self.availableConnections[i].workItems.length == 0) {
+            connections.push(self.availableConnections[i]);
+          }
+        }
+
+        // No connection found that has no work on it, just pick one for pipelining
+        if(connections.length == 0) {
+          connection = self.availableConnections[self.connectionIndex++ % self.availableConnections.length];
+        } else {
+          connection = connections[self.connectionIndex++ % connections.length];
+        }
+
         // Is the connection connected
         if(connection.isConnected()) {
           // Get the next work item
@@ -1169,6 +1199,20 @@ function _execute(self) {
             }
           }
 
+          // Don't execute operation until we have a full pool
+          if(totalConnections < self.options.size) {
+            // Connection has work items, then put it back on the queue
+            // and create a new connection
+            if(connection.workItems.length > 0) {
+              // Lets put the workItem back on the list
+              self.queue.unshift(workItem);
+              // Create a new connection
+              _createConnection(self);
+              // Break from the loop
+              break;
+            }
+          }
+
           // Get actual binary commands
           var buffer = workItem.buffer;
 
@@ -1203,13 +1247,6 @@ function _execute(self) {
 
           if(workItem.immediateRelease && self.authenticating) {
             self.nonAuthenticatedConnections.push(connection);
-          }
-
-          // Have we not reached the max connection size yet
-          if(totalConnections < self.options.size
-            && self.queue.length > 0) {
-            // Create a new connection
-            _createConnection(self);
           }
         } else {
           // Remove the disconnected connection
