@@ -31,6 +31,70 @@
     -webkit-filter: none;
 }
 
+.form-submit {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    border: 0px;
+    padding: 5px;
+    margin-top: 20px;
+
+}
+
+#back-button-signup {
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    padding: 10px;
+    font-size: 18px;
+}
+
+input[type=text], input[type=password] {
+    text-align: right;
+    font-size: 18px;
+    background: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    margin-left: 10px;
+    /*margin-bottom: -15px;*/
+    /*margin: 10px;*/
+    float: right;
+}
+
+.login-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 50px;
+    color: white;
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    /*-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+}
+
+.signup-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 50px;
+    color: white;
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    /*-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+}
 
 .menuText {
     color: white;

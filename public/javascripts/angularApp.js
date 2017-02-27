@@ -1,4 +1,4 @@
-angular.module('ClubTree', ['ui.router']).config([
+angular.module('Clubtree', ['ui.router']).config([
     '$stateProvider',
     '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
@@ -18,6 +18,11 @@ angular.module('ClubTree', ['ui.router']).config([
                 url: "/clubprofile/:id",
                 templateUrl: '../views/clubprofile.view.html',
                 controller: 'ClubProfile'
+            })
+            .state('joinus', {
+                url: "/joinus",
+                templateUrl: '../views/joinus.view.html',
+                controller: 'JoinUs'
             });
 
         $urlRouterProvider.otherwise('home');

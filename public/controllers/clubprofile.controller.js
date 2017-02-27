@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ClubTree').controller('ClubProfile', [
+angular.module('Clubtree').controller('ClubProfile', [
     '$scope',
     'ClubAPI',
     function ($scope, ClubAPI) {

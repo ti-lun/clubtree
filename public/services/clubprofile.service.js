@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ClubTree').service('ClubAPI', function ($http) {
+angular.module('Clubtree').service('ClubAPI', function ($http) {
     this.get = function () {
         console.log('you are in service club get');
         return {
