@@ -14,23 +14,27 @@ require('./models/Trees');
 
 mongoose.connect('mongodb://localhost/clubtree');
 
+// var john = new Member(
+//   {
+//   firstName: "john",
+//   lastName: "wicks",
+//   email: "not4You@what.com",
+//   clubs: []
+//   });
+
+// //   console.log (john);
+// //   console.log("yo what up? Adding John in.");
+// john.save();  //oh yeah, this definitely works.
+
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-
-
 console.log("before any of that, let's try adding some content to the mongo db");
-
-
 //Custom module which will help take care of what collection we insert it from
 // Example demo below
-var addDocToCollect =require("./addDocToCollect");
-var currentCollection = "testing";
-var doc = {"Hwat": "oh yeah, it definitely works"};
-var doc2 = {"Oh no": "Caallll on me"};
-addDocToCollect(currentCollection, doc);
-addDocToCollect(currentCollection, doc2);
-
+var q = require("./exampleAddDocs.js");
 
 //wait guys, we opened mongoose.connect twice. I think I might have done that.
 
@@ -72,6 +76,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//Problem after i deleted this part, it will hang when calling npm start
+//nvm, no problems
 
 module.exports = app;
