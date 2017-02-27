@@ -83,15 +83,17 @@ input:focus, button:focus {
 }
 
 div.clubprofileheader {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 50pt;
+  margin-bottom: 30pt;
 }
 
 div.clubprofilelogo {
-  max-width: 128px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 256px;
+}
+
+div.clubprofilename {
+  font-size: 30pt;
+  font-weight: bold;
 }
 
 div.clubprofilesection {

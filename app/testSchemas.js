@@ -46,11 +46,12 @@ var john = new Member(
 	firstName: "john",
 	lastName: "wicks",
 	email: "not4You@what.com",
-	clubs: [{}]
+	clubs: []
 	});
 
 	console.log (john);
   console.log("yo what up? Adding John in.");
   john.save();
+
 
 

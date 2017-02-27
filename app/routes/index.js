@@ -27,6 +27,7 @@ router.get('/clubs', function(req, res, next) {
 
 router.post('/clubs', function(req, res, next) {
   var club = new Club(req.body);
+  // console.log(req.body);  //seeing what the post body is in the terminal
 
   club.save(function(err, club) {
     if (err) {return next(err);}

@@ -14,8 +14,13 @@ require('./models/Trees');
 
 mongoose.connect('mongodb://localhost/clubtree');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// var john = new Member(
+//   {
+//   firstName: "john",
+//   lastName: "wicks",
+//   email: "not4You@what.com",
+//   clubs: []
+//   });
 
 //wait guys, we opened mongoose.connect twice. I think I might have done that.
 
@@ -57,6 +62,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//Problem after i deleted this part, it will hang when calling npm start
+//nvm, no problems
 
 module.exports = app;
