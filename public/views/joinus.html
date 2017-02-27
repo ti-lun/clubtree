@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Clubtree</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="../controllers/joinus.controller.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+
+
+
+
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/joinus.css">
+    <script src="../javascripts/joinusTransition.js"></script>
+
+    <link rel="shortcut icon" href="../images/site-logo/favicon.ico" >
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+  </head>
+
+  <div class="row floatIt">
+    <div class="col-md-12 top-banner-each"><img class="img-responsive" src="../images/site-logo/clubtree-stroke.png" width="20%"></div>
+</div>
+
+  <div class="row" ng-app="Clubtree" ng-controller="JoinUs">
+
+      <div class="col-lg-6 side" id="login" ng-click="loginToggle()">
+          <span class="menuText" id="menuTextlogin">Log In</span>
+          <div id="login-image"></div>
+          <div class="login-content" style="display: none">
+              <form ng-click="loginToggle()">
+              Email <input type="text"></input><br />
+              Password <input type="text"></input><br />
+              <button type="submit">Next</button>
+            </form>
+        </div>
+
+      </div>
+      <div class="col-lg-6 side" id="signup" ng-click="signupToggle()">
+          <span class="menuText" id="menuTextsignup">Sign Up</span>
+          <div class="signup-content" style="display: none">
+              <form ng-click="signupToggle()">
+              Email <input type="text"></input><br /><br />
+              Password <input type="text"></input><br />
+              <button type="submit">Next</button>
+            </form>
+        </div>
+          <div id="signup-image"></div>
+
+      </div>
+  </div>
+</html>
