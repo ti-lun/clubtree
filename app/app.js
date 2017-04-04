@@ -1,4 +1,4 @@
- var express = require('express');
+var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -14,13 +14,8 @@ require('./models/Trees');
 
 mongoose.connect('mongodb://localhost/clubtree');
 
-// var john = new Member(
-//   {
-//   firstName: "john",
-//   lastName: "wicks",
-//   email: "not4You@what.com",
-//   clubs: []
-//   });
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 //wait guys, we opened mongoose.connect twice. I think I might have done that.
 
