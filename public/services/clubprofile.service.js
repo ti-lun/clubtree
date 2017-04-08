@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('Clubtree').service('ClubAPI', function ($http) {
-    this.get = function () {
+angular.module('Clubtree').service('ClubAPI', function ($http, $q) {
+    this.get = function (id) {
         console.log('you are in service club get');
         // return $http.get('/clubs/' + id);
-        return new Promise(function (resolve, reject) {
+        return new $q(function (resolve, reject) {
             setTimeout(function () {
                 resolve({
                     name: 'UCI StarCraft',
