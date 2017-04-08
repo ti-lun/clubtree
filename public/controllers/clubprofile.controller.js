@@ -5,7 +5,6 @@ angular.module('Clubtree').controller('ClubProfile', [
     '$stateParams',
     'ClubAPI',
     function ($scope, $stateParams, ClubAPI) {
-        console.log('you are inside the controller 2');
         ClubAPI.get($stateParams.id).then(function (response) {
             $scope.viewingClubProfile = response;
         });
