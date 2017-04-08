@@ -7,8 +7,8 @@ angular.module('Clubtree').service('ClubAPI', function ($http, $q) {
         return new $q(function (resolve, reject) {
             setTimeout(function () {
                 resolve({
-                    name: 'UCI StarCraft',
-                    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida sodales luctus.',
+                    clubName: 'UCI StarCraft',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida sodales luctus.',
                     survey: {
                         dateFounded: 2016,
                         numberOfMembers: 10,
