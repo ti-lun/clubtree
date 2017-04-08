@@ -5,7 +5,9 @@ var MemberSchema = new mongoose.Schema({
   lastName: String,
   email: String,
   password: String,
-  clubs: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Club'}]
+  clubs: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Club'}],
+  joinedDate: Date,
+  birthDay: Date,
 });
 
 Member = mongoose.model('Member', MemberSchema); //name of collection is member

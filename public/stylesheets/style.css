@@ -43,6 +43,11 @@ hr.style1 {
   margin-right: 20px;
 }
 
+.btn-red a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 .btn2 {
   background-color: #00bcd4;
   border-radius: 10px;
