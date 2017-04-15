@@ -23,6 +23,11 @@ angular.module('Clubtree', ['ui.router']).config([
                 url: "/joinus",
                 templateUrl: '../views/joinus.view.html',
                 controller: 'JoinUs'
+            })
+            .state('loggedin', {
+                url: "/loggedin",
+                templateUrl: '../views/loggedIn.view.html',
+                controller: 'JoinUs'
             });
 
         $urlRouterProvider.otherwise('home');
