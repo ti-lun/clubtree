@@ -25,6 +25,13 @@ router.get('/clubs', function(req, res, next) {
   });
 });
 
+router.get('/clubs/:id', function (req, res, next) {
+  Club.findById(req.params.id, function (err, document) {
+    if (err) { return next(err); }
+    res.json(document);
+  });
+});
+
 router.post('/clubs', function(req, res, next) {
   var club = new Club(req.body);
   // console.log(req.body);  //seeing what the post body is in the terminal

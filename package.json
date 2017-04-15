@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "loaddb": "node ./development/load-random-data.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
+    "faker": "^4.1.0",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.4",
     "morgan": "~1.7.0",
