@@ -1,48 +1,16 @@
-<html>
-  <head>
-    <title>Clubtree</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-    <script src="/javascripts/angularApp.js"></script>
-    <script src="/services/clubprofile.service.js"></script>
-    <script src="/controllers/joinus.controller.js"></script>
-    <script src="/controllers/clubprofile.controller.js"></script>
-    <script src="/controllers/frontpage.controller.js"></script>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/loggedInstyle.css">
-    <link rel="shortcut icon" href="/images/site-logo/favicon.ico" >
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-  </head>
-    <body ng-app="Clubtree">
-      <div class="row top-banner">
-        <div class="col-md-6" style="top:25%;"><img class="img-responsive" src="/images/site-logo/entirelogo.png" width="50%"></div>
-        <div class="col-md-6" style="display:inline-block; text-align: right; top: 25%"><img src="/images/search-icon.png" width="7%" style="margin-right:10px">&nbsp;<button class="btn-teal" style="margin-right:10px">Log Out</button>&nbsp;<img src="images/prof-pics/tyler-kun.png" width="7%"></div>
+<div class="content-container">
+  <div class="dash-prof-pic">
+    <img src="images/prof-pics/tyler-kun.png" width="50%"> <br/>
+    <h1>Hi, John!</h1>
+    <strong>Select a Clubtree:</strong>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Dropdown button</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
       </div>
-      <div class="content-container">
-          <div class="dash-prof-pic">
-              <img src="images/prof-pics/tyler-kun.png" width="50%"> <br/>
-              <h1>Hi, John!</h1>
-              <strong>Select a Clubtree:</strong>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-        </div>
-
-      </div>
-  <!-- </body> -->
-
-  <!-- <script type="text/ng-template" id="/loggedin.html"> -->
-  <!-- </script> -->
-  </body>
-  </html>
+    </div>
+  </div>
+</div>

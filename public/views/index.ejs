@@ -19,18 +19,8 @@
   </head>
     <body ng-app="Clubtree">
 
-      <ui-view></ui-view>
-
-      <script type="text/ng-template" id="/home.html">
-            <div class="row top-banner">
-              <div class="col-md-6 top-banner-each"><img class="img-responsive" src="/images/site-logo/entirelogo.png" width="90%"></div>
-              <div class="col-md-6 top-banner-each"><button class="btn-red"><a href="#/joinus">Join us</a></button><button class="btn-red"><a href="#/loggedin">Lol logged in mockup</a></button></div>
-            </div>
-            <div class="front-splash">
-              <h1 class="front-splash-font">{{ welcome }}</h1>
-              <input type="text" class="search" placeholder="Got a name?"></input>
-          </div>
-      </script>
+      <div ui-view="header"></div>
+      <div ui-view="body"></div>
 
   </body>
 </html>

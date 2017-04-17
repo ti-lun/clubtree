@@ -6,28 +6,57 @@ angular.module('Clubtree', ['ui.router']).config([
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: '/home.html',
-                controller: 'FrontPage'
+                views: {
+                    header: {
+                        templateUrl: '../views/loggedout.header.html',
+                    },
+                    body: {
+                        templateUrl: '../views/home.body.html',
+                        controller: 'FrontPage'
+                    }
+                }
             })
             .state('login', {
                 url: '/login',
-                templateUrl: '/login.html',
-                controller: 'FrontPage'
+                views: {
+                    body: {
+                        templateUrl: '/login.html',
+                        controller: 'FrontPage'
+                    }
+                }
             })
             .state('clubprofile', {
                 url: "/clubprofile/:id",
-                templateUrl: '../views/clubprofile.view.html',
-                controller: 'ClubProfile'
+                views: {
+                    header: {
+                        templateUrl: '../views/loggedin.header.html',
+                    },
+                    body: {
+                        templateUrl: '../views/clubprofile.view.html',
+                        controller: 'ClubProfile'
+                    }
+                }
             })
             .state('joinus', {
                 url: "/joinus",
-                templateUrl: '../views/joinus.view.html',
-                controller: 'JoinUs'
+                views: {
+                    body: {
+                        templateUrl: '../views/joinus.view.html',
+                        controller: 'JoinUs'
+                    }
+                }
             })
             .state('loggedin', {
                 url: "/loggedin",
-                templateUrl: '../views/loggedIn.view.html',
-                controller: 'JoinUs'
+                views: {
+                    header: {
+                        templateUrl: '../views/loggedin.header.html',
+                    },
+                    body: {
+                        templateUrl: '../views/loggedIn.view.html',
+                        controller: 'JoinUs'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('home');
