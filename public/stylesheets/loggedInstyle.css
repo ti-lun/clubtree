@@ -10,9 +10,8 @@ hr.style1 {
 .content-container {
     background-color: #FFFFFF;
     width: 80%;
+    height: 100%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
 }
 
 .btn-teal {
