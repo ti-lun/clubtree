@@ -1,5 +1,0 @@
-how do i create end points?
-with express.routers
-take a look at the routes.js index
-
-if we can create members, it should

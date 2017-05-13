@@ -7,19 +7,18 @@ var bodyParser = require('body-parser');
 
 // require Mongoose schemas
 var mongoose = require('mongoose');
-require('./models/Clubs');
-require('./models/Members');
-require('./models/Trees');
-// require('./models/Tasks');
+mongoose.Promise = global.Promise;
+//assert.equal(query.exec().constructor, global.Promise);
 
-mongoose.connect('mongodb://localhost/clubtree');
+require('./models');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+mongoose.connect('mongodb://clubtree:cttest@ds137271.mlab.com:37271/clubtree_dev');
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 
-//wait guys, we opened mongoose.connect twice. I think I might have done that.
+var routes = require('./routes');
 
 var app = express();
+
 // view engine setup
 app.set('views', path.join(__dirname, '../public/views'));
 app.set('view engine', 'ejs');
@@ -33,7 +32,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,7 +54,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-//nvm, no problems
 
 module.exports = app;
