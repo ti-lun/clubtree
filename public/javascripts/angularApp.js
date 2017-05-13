@@ -63,43 +63,38 @@ angular.module('Clubtree', ['ui.router']).config([
 
     }])
 
-    .run(['$rootScope', '$window', function($rootScope, $window) {
+    .run(['$rootScope', '$window', function ($rootScope, $window) {
 
         $rootScope.user = {};
 
-        $window.fbAsyncInit = function() {
-        // Executed when the SDK is loaded
-        FB.init({
-            appId: '{app-id}',
-            /*
-            Adding a Channel File improves the performance
-            of the javascript SDK, by addressing issues
-            with cross-domain communication in certain browsers.
-            */
-            channelUrl: 'app/channel.html',
-            status: true,
-            cookie: true,
-            xfbml: true
-        });
-    };
+        $window.fbAsyncInit = function () {
+            // Executed when the SDK is loaded
+            FB.init({
+                appId: '{app-id}',
+                version: 'v2.9',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
 
-    (function(d){
-    // load the Facebook javascript SDK
-    var js,
-    id = 'facebook-jssdk',
-    ref = d.getElementsByTagName('script')[0];
+        (function (d) {
+            // load the Facebook javascript SDK
+            var js,
+                id = 'facebook-jssdk',
+                ref = d.getElementsByTagName('script')[0];
 
-    if (d.getElementById(id)) {
-      return;
-    }
+            if (d.getElementById(id)) {
+                return;
+            }
 
-    js = d.createElement('script');
-    js.id = id;
-    js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
+            js = d.createElement('script');
+            js.id = id;
+            js.async = true;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
 
-    ref.parentNode.insertBefore(js, ref);
+            ref.parentNode.insertBefore(js, ref);
 
-    }(document));
+        }(document));
 
-}]);
+    }]);
