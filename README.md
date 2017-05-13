@@ -30,8 +30,7 @@ There's lots out there, but here are a few that our team enjoys using. Find one 
 Before you can get the server up and running, you will need to do the following:
 
 1. Download and install [NodeJS](https://nodejs.org/en/).
-2. Download and install [MongoDB](https://www.mongodb.com/). 
-3. Execute `npm install` at the root of the project.
+2. Execute `npm install` at the root of the project.
 
 ## Starting the Server in Development Mode
 
